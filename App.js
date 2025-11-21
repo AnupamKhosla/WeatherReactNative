@@ -9,8 +9,9 @@ import {
   Platform,
   ActivityIndicator  
 } from 'react-native';
+import * as Location from 'expo-location';
 
-import SearchInput from './SearchInput.js'; // Search component
+import SearchInput from './components/SearchInput.js'; // Search component
 import { getWeather2 } from './utils/api';
 
 
@@ -53,10 +54,63 @@ export default function App() { //function hook
     }    
   };
 
-  //give be useEffect
-  useEffect(()=>{
-    handleUpdateLocation("New york"); //default city weather delhi   
+  //grab curr location or fallback on load
+  useEffect(() => {
+    (async () => {
+      try {
+        const { status } = await Location.requestForegroundPermissionsAsync();
+
+        if (status !== 'granted') {
+          console.log("[DEBUG] Permission denied → fallback city");
+          console.log("[Fetching New York weather]");
+          handleUpdateLocation("New York");
+          return;
+        }
+        console.log("[DEBUG] Fetching GPS location...");
+        const loc = await Location.getCurrentPositionAsync({});
+        console.log("[DEBUG] Raw GPS location:", loc);
+
+        if (!loc || !loc.coords) {
+          console.log("[DEBUG] loc is null/undefined → fallback city");
+          console.log("[Fetching New York weather]");
+          handleUpdateLocation("New York");
+          return;
+        }
+        console.log("[DEBUG] Reverse geocoding...");
+        const geo = await Location.reverseGeocodeAsync({
+          latitude: loc.coords.latitude,
+          longitude: loc.coords.longitude,
+        });
+
+        console.log("[DEBUG] Raw geocode data:", geo);
+
+        if (!geo || geo.length === 0) {
+          console.log("[DEBUG] geocode failed (empty array) → fallback city");
+          console.log("[Fetching New York weather]");
+          handleUpdateLocation("New York");
+          return;
+        }
+
+        const city = geo[0]?.city || geo[0]?.subregion;
+        console.log("[DEBUG] Parsed city:", city);
+
+        if (!city) {
+          console.log("[DEBUG] No city in geocode → fallback city");
+          handleUpdateLocation("New York");
+          return;
+        }
+
+        handleUpdateLocation(city);
+
+      } catch (e) {
+        console.log("[DEBUG] Location error → fallback city:", e);
+        console.log("[Fetching New York weather]");
+        handleUpdateLocation("New York");
+      }
+    })();
   }, []);
+
+
 
 
   return (

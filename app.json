@@ -2,28 +2,36 @@
   "expo": {
     "name": "Global Weather",
     "slug": "global-weather",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#333"
+      "backgroundColor": "#333333"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.Anupamkhosla.GlobalWeather"
+      "bundleIdentifier": "global.weather",
+      "buildNumber": "1",
+      "supportsTablet": true,      
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "App needs your location to show weather."
+      }
     },
     "android": {
+      "package": "com.globalweather",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.user31782.myapp"
+      },      
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
