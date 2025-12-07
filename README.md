@@ -1,8 +1,8 @@
-# WeatherReactNative
+# Global Weather -- WeatherReactNative
 https://play.google.com/store/apps/details?id=com.globalweather
 
 ### Added features:  
-- metaweather has been replaced by wttr api. metaweather has been commercialized and no longer available for open source usage. 
+- https://open-meteo.com is being used for weather data as an API. 
 - React classes have been converted to hooks.
 
 ### 2025 Updates

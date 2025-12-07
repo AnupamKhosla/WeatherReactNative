@@ -7,7 +7,7 @@ import {
   Text,
   KeyboardAvoidingView,
   Platform,
-  ActivityIndicator  
+  ActivityIndicator
 } from 'react-native';
 import * as Location from 'expo-location';
 
@@ -35,10 +35,10 @@ export default function App() { //function hook
   const [created, setCreated] = useState(currentTime);
   //const [created, setCreated] = useState(currentTime); 
   //FUNCTIONS
-  const handleUpdateLocation = async (city) => {    
+  const handleUpdateLocation = async (city) => {
     if (!city) return;
     setLoading(true);
-    try {            
+    try {
       const { location, weather, temperature, created, icon } = await getWeather2(city);
 
       setLoading(false);
@@ -51,7 +51,7 @@ export default function App() { //function hook
     } catch (e) {
       setLoading(false);
       setError(true);
-    }    
+    }
   };
 
   //grab curr location or fallback on load
@@ -114,54 +114,54 @@ export default function App() { //function hook
 
 
   return (
-    <View style={styles.container} behavior="padding"> 
+    <View style={styles.container} behavior="padding">
       {/*View is buggy, creates whitespace above keyboard on android*/}
       <StatusBar barStyle="light-content" />
-      
+
       <ImageBackground
         source={require('./assets/bg.png')} // change to function getImageForWeather(weather) later
         style={styles.imageContainer}
         imageStyle={styles.image}
 
       >
-        <View style={styles.detailsContainer}>           
+        <View style={styles.detailsContainer}>
           <ActivityIndicator animating={loading} color="white" size="large" />
-            
-             {!loading && (
-                <View> 
-                  {error && (
-                    <Text style={[styles.smallText, styles.textStyle]}>
-                      😞 Could not load your city or weather. Please try again later...
-                    </Text>
-                  )}
-                  {!error && (
-                    <View>
-                      <Text style={[styles.largeText, styles.textStyle]}>
-                        {icon} {location}
-                      </Text>
-                      <Text style={[styles.smallText, styles.textStyle]}>
-                         {weather}
-                      </Text>
-                      <Text style={[styles.largeText, styles.textStyle]}>
-                        {`${Math.round(temperature)}°`}
-                      </Text>
-                    </View>
-                  )}
-                  <SearchInput
-                    placeholder="Search any city"
-                    onSubmit={handleUpdateLocation}
-                  />
-                  {!error && (
-                    <Text style={[styles.smallText, styles.textStyle]}>
-                      Last update: {created}
-                    </Text>
-                  )}
+
+          {!loading && (
+            <View>
+              {error && (
+                <Text style={[styles.smallText, styles.textStyle]}>
+                  😞 Could not load your city or weather. Please try again later...
+                </Text>
+              )}
+              {!error && (
+                <View>
+                  <Text style={[styles.largeText, styles.textStyle]}>
+                    {icon} {location}
+                  </Text>
+                  <Text style={[styles.smallText, styles.textStyle]}>
+                    {weather}
+                  </Text>
+                  <Text style={[styles.largeText, styles.textStyle]}>
+                    {`${Math.round(temperature)}°`}
+                  </Text>
                 </View>
-              )}           
+              )}
+              <SearchInput
+                placeholder="Search any city"
+                onSubmit={handleUpdateLocation}
+              />
+              {!error && (
+                <Text style={[styles.smallText, styles.textStyle, styles.subtitle]}>
+                  Live at {created} {location}
+                </Text>
+              )}
+            </View>
+          )}
         </View>
       </ImageBackground>
 
-     
+
     </View>
   );
 }
@@ -201,5 +201,8 @@ const styles = StyleSheet.create({
   },
   smallText: {
     fontSize: 18,
+  },
+  subtitle: {
+    marginTop: 10,
   },
 });

@@ -1,4 +1,5 @@
-const icons = {
+// /mnt/data/getIconForWeather.js
+const iconsDay = {
   Clear: '☀️',
   Hail: '⛆',
   'Heavy Cloud': '☁️',
@@ -8,7 +9,23 @@ const icons = {
   Showers: '🌧️',
   Sleet: '🌨️',
   Snow: '❄️',
-  Thunder: '⛈️'
+  Thunder: '⛈️',
 };
 
-export default weather => icons[weather];
+const iconsNight = {
+  Clear: '🌙',
+  Hail: '⛈️',
+  'Heavy Cloud': '☁️',
+  'Light Cloud': '☁️',
+  'Heavy Rain': '🌩️',
+  'Light Rain': '🌧️',
+  Showers: '🌧️',
+  Sleet: '🌨️',
+  Snow: '❄️',
+  Thunder: '🌩️',
+};
+
+export default function getIconForWeather(weatherLabel, isDay = true) {
+  if (isDay) return iconsDay[weatherLabel] || '❓';
+  return iconsNight[weatherLabel] || '🌙';
+}

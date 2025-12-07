@@ -16,8 +16,8 @@
     ],
     "ios": {
       "bundleIdentifier": "global.weather",
-      "buildNumber": "1",
-      "supportsTablet": true,      
+      "buildNumber": "2",
+      "supportsTablet": true,
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "App needs your location to show weather."
       }
@@ -27,11 +27,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },      
+      },
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION"
-      ]
+      ],
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"
