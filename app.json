@@ -15,11 +15,12 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "global.weather",
-      "buildNumber": "2",
+      "bundleIdentifier": "com.global.weather",
+      "buildNumber": "1",
       "supportsTablet": true,
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "App needs your location to show weather."
+        "NSLocationWhenInUseUsageDescription": "App needs your location to show weather.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
