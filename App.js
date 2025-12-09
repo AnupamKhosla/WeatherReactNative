@@ -11,7 +11,8 @@ import {
 } from 'react-native';
 import * as Location from 'expo-location';
 
-import SearchInput from './components/SearchInput.js'; // Search component
+import SearchInput from './components/SearchInput.js'; // Search bar
+import { getCityName } from './utils/getCityName';
 import { getWeather2 } from './utils/api';
 
 
@@ -53,70 +54,58 @@ export default function App() { //function hook
       setError(true);
     }
   };
-
-  //grab curr location or fallback on load
+   
+  // grab curr location or fallback on load
+// grab curr location or fallback on load
   useEffect(() => {
     (async () => {
+      // Default fallback
+      const DEFAULT_CITY = "New York";
+
       try {
         const { status } = await Location.requestForegroundPermissionsAsync();
 
         if (status !== 'granted') {
           console.log("[DEBUG] Permission denied → fallback city");
-          console.log("[Fetching New York weather]");
-          handleUpdateLocation("New York");
+          handleUpdateLocation(DEFAULT_CITY);
           return;
         }
+
         console.log("[DEBUG] Fetching GPS location...");
         const loc = await Location.getCurrentPositionAsync({});
-        console.log("[DEBUG] Raw GPS location:", loc);
 
         if (!loc || !loc.coords) {
-          console.log("[DEBUG] loc is null/undefined → fallback city");
-          console.log("[Fetching New York weather]");
-          handleUpdateLocation("New York");
-          return;
-        }
-        console.log("[DEBUG] Reverse geocoding...");
-        const geo = await Location.reverseGeocodeAsync({
-          latitude: loc.coords.latitude,
-          longitude: loc.coords.longitude,
-        });
-
-        console.log("[DEBUG] Raw geocode data:", geo);
-
-        if (!geo || geo.length === 0) {
-          console.log("[DEBUG] geocode failed (empty array) → fallback city");
-          console.log("[Fetching New York weather]");
-          handleUpdateLocation("New York");
+          handleUpdateLocation(DEFAULT_CITY);
           return;
         }
 
-        const city = geo[0]?.city || geo[0]?.subregion;
-        console.log("[DEBUG] Parsed city:", city);
+        console.log("[DEBUG] GPS Success. Converting Coords to City Name...");
+        
+        // HERE IS THE MAGIC: Turn Coords into city name "Melbourne"
+        const cityName = await getCityName(loc.coords.latitude, loc.coords.longitude);
 
-        if (!city) {
-          console.log("[DEBUG] No city in geocode → fallback city");
-          handleUpdateLocation("New York");
-          return;
+        console.log("[DEBUG] Detected City:", cityName);
+
+        if (cityName) {
+          // Pass the STRING to your API
+          handleUpdateLocation(cityName);
+        } else {
+          handleUpdateLocation(DEFAULT_CITY);
         }
-
-        handleUpdateLocation(city);
 
       } catch (e) {
-        console.log("[DEBUG] Location error → fallback city:", e);
-        console.log("[Fetching New York weather]");
-        handleUpdateLocation("New York");
+        console.log("[DEBUG] Error in main loop:", e);
+        handleUpdateLocation(DEFAULT_CITY);
       }
     })();
   }, []);
 
 
 
-
   return (
     <View style={styles.container} behavior="padding">
       {/*View is buggy, creates whitespace above keyboard on android*/}
-      <StatusBar barStyle="light-content" />
+      <StatusBar style="light" />
 
       <ImageBackground
         source={require('./assets/bg.png')} // change to function getImageForWeather(weather) later

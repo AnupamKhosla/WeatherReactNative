@@ -2,7 +2,7 @@
   "expo": {
     "name": "Global Weather",
     "slug": "global-weather",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -16,8 +16,13 @@
     ],
     "ios": {
       "bundleIdentifier": "com.global.weather",
-      "buildNumber": "1",
+      "buildNumber": "2",
       "supportsTablet": true,
+      "splash": {
+        "image": "./assets/splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#EEDD55"
+      },
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "App needs your location to show weather.",
         "ITSAppUsesNonExemptEncryption": false
@@ -33,7 +38,7 @@
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION"
       ],
-      "versionCode": 3
+      "versionCode": 4
     },
     "web": {
       "favicon": "./assets/favicon.png"

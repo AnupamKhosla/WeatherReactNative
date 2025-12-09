@@ -32,9 +32,7 @@ const weatherMap = {
 
 export const getWeather2 = async (city_name) => {
   // 1) Geocoding
-  const geoURL = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
-    city_name
-  )}&count=1&language=en&format=json`;
+  const geoURL = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city_name)}&count=1&language=en&format=json`;
 
   const geoRes = await fetch(geoURL);
   const geoData = await geoRes.json();
