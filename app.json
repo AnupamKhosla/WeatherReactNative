@@ -2,10 +2,11 @@
   "expo": {
     "name": "Global Weather",
     "slug": "global-weather",
+    "scheme": "globalweather",
     "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -48,6 +49,10 @@
         "projectId": "4a61b61c-e886-484a-b72f-06560a99e136"
       }
     },
-    "owner": "user31782"
+    "owner": "user31782",
+    "plugins": [
+      "expo-status-bar",
+      "expo-router"
+    ]
   }
 }
