@@ -1,0 +1,24 @@
+Starting project at /Users/anupamkhosla/Desktop/Projects/GLOBALWEATHER_ALL/WeatherReactNative
+Logs: /Users/anupamkhosla/Desktop/Projects/GLOBALWEATHER_ALL/WeatherReactNative/.expo/dev/logs/start.log
+Starting Metro Bundler
+
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Waiting on http://localhost:8083
+
+Logs for your project will appear below.
+| [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+| [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+| [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+| [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+| [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+| [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+| [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Android Bundled 6648ms node_modules/expo-router/entry.js (1425 modules)
+ WARN  You have selected the "dimezisBlurViewSdk31Plus" blur method, but the `blurTarget` prop has not been configured. The blur view will fallback to "none" blur method to avoid errors. You can learn more about the new BlurView API at: https://docs.expo.dev/versions/latest/sdk/blur-view/
+ LOG  [DEBUG] Fetching GPS location...
+ LOG  [DEBUG] Error in main loop: [Error: Current location is unavailable. Make sure that location services are enabled]
+Android Bundled 64ms node_modules/expo-router/entry.js (1 module)
+ WARN  You have selected the "dimezisBlurViewSdk31Plus" blur method, but the `blurTarget` prop has not been configured. The blur view will fallback to "none" blur method to avoid errors. You can learn more about the new BlurView API at: https://docs.expo.dev/versions/latest/sdk/blur-view/
+ LOG  [DEBUG] Fetching GPS location...
+ LOG  [DEBUG] Error in main loop: [Error: Current location is unavailable. Make sure that location services are enabled]
