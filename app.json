@@ -7,11 +7,6 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#333333"
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -19,11 +14,6 @@
       "bundleIdentifier": "com.global.weather",
       "buildNumber": "2",
       "supportsTablet": true,
-      "splash": {
-        "image": "./assets/splash.png",
-        "resizeMode": "contain",
-        "backgroundColor": "#EEDD55"
-      },
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "App needs your location to show weather.",
         "ITSAppUsesNonExemptEncryption": false
@@ -52,7 +42,16 @@
     "owner": "user31782",
     "plugins": [
       "expo-status-bar",
-      "expo-router"
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "backgroundColor": "#333333",
+          "resizeMode": "contain",
+          "imageWidth": 200
+        }
+      ]
     ]
   }
 }

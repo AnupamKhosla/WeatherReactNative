@@ -9,7 +9,7 @@ export default function RootLayout() {
       : 'white';
 
   return (
-    <ThemeProvider value={DarkTheme}>
+    <ThemeProvider value={DarkTheme as any}>
       <NativeTabs tintColor={tint} labelStyle={{ color: tint }}>
         <NativeTabs.Trigger name="index">
           <NativeTabs.Trigger.Icon sf="cloud.sun.fill" md="partly_cloudy_day" />

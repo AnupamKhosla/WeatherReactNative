@@ -48,6 +48,10 @@ export type WeatherResult = {
   temperature: string;
   created: string;
   icon: string;
+  // City-local hour (0-23), derived from the parsed forecast time. Owned by us
+  // (not raw API), so the UI can theme the background by time of day without
+  // ever touching external data.
+  hour: number;
 };
 
 export const getWeather2 = async (cityName: string): Promise<WeatherResult> => {
@@ -89,6 +93,7 @@ export const getWeather2 = async (cityName: string): Promise<WeatherResult> => {
   // 4) Derive day/night + a friendly local-time string for "Live at ...".
   //    Open-Meteo returns time as "YYYY-MM-DDTHH:MM" when timezone=auto.
   let isDay = true;
+  let localHour = 12;
   let createdLocal = '';
 
   if (typeof time === 'string' && time.includes('T')) {
@@ -119,10 +124,13 @@ export const getWeather2 = async (cityName: string): Promise<WeatherResult> => {
       });
       const hourNum = parseInt(hourStr, 10);
       isDay = hourNum >= 6 && hourNum < 19;
+      localHour = Number.isFinite(hourNum) ? hourNum : localHour;
     } catch {
       const now = new Date();
       const hour = now.getHours();
       isDay = hour >= 6 && hour < 19;
+      localHour = hour;
+    localHour = Number.isFinite(hour) ? hour : 12;
       createdLocal = now.toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: '2-digit',
@@ -141,6 +149,7 @@ export const getWeather2 = async (cityName: string): Promise<WeatherResult> => {
     temperature: `${Math.round(temperature)}`,
     created: createdLocal,
     icon: iconGlyph,
+    hour: localHour,
   };
 };
 

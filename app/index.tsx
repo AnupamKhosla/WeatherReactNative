@@ -1,95 +1,67 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
-  StyleSheet,
-  View,
-  ImageBackground,
-  Text,
-  Platform,
   ActivityIndicator,
+  Dimensions,
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
 import * as Location from 'expo-location';
 import { BlurTargetView } from 'expo-blur';
+import { LinearGradient } from 'expo-linear-gradient';
 
-import SearchInput from '../components/SearchInput.js';
+import SearchInput from '../components/SearchInput';
 import GlassCard from '../components/GlassCard';
 import { getCityName } from '../utils/getCityName';
-import { getWeather2 } from '../utils/api';
+import { getWeather2, type WeatherResult } from '../utils/api';
+import getThemeForWeather, { DEFAULT_THEME } from '../utils/getThemeForWeather';
+
+const DEFAULT_CITY = 'New York';
 
 export default function WeatherScreen() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [location, setLocation] = useState('');
-  const [temperature, setTemperature] = useState(0);
-  const [weather, setWeather] = useState('');
-  const [icon, setIcon] = useState('');
-
-  const currentTime = new Date().toLocaleTimeString();
-  const [created, setCreated] = useState(currentTime);
+  const [data, setData] = useState<WeatherResult | null>(null);
 
   const blurTarget = useRef<View | null>(null);
 
-  const handleUpdateLocation = async (city) => {
+  const theme = data ? getThemeForWeather(data.weather, data.hour) : DEFAULT_THEME;
+
+  const handleUpdateLocation = async (city: string) => {
     if (!city) return;
     setLoading(true);
     try {
       const result = await getWeather2(city);
-      const {
-        location,
-        weather,
-        temperature,
-        created,
-        icon,
-      } = result;
-
-      setLoading(false);
+      setData(result);
       setError(false);
-      setLocation(location);
-      setWeather(weather);
-      setTemperature(temperature);
-      setCreated(created);
-      setIcon(icon);
-    } catch (e) {
-      setLoading(false);
+    } catch {
       setError(true);
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     (async () => {
-      const DEFAULT_CITY = 'New York';
-
       try {
         const { status } = await Location.requestForegroundPermissionsAsync();
-
         if (status !== 'granted') {
-          console.log('[DEBUG] Permission denied → fallback city');
           handleUpdateLocation(DEFAULT_CITY);
           return;
         }
 
-        console.log('[DEBUG] Fetching GPS location...');
         const loc = await Location.getCurrentPositionAsync({});
-
-        if (!loc || !loc.coords) {
+        if (!loc?.coords) {
           handleUpdateLocation(DEFAULT_CITY);
           return;
         }
-
-        console.log('[DEBUG] GPS Success. Converting Coords to City Name...');
 
         const cityName = await getCityName(loc.coords.latitude, loc.coords.longitude);
-
-        console.log('[DEBUG] Detected City:', cityName);
-
-        if (cityName) {
-          handleUpdateLocation(cityName);
-        } else {
-          handleUpdateLocation(DEFAULT_CITY);
-        }
-
-      } catch (e) {
-        console.log('[DEBUG] Error in main loop:', e);
+        handleUpdateLocation(cityName || DEFAULT_CITY);
+      } catch {
         handleUpdateLocation(DEFAULT_CITY);
       }
     })();
@@ -98,47 +70,50 @@ export default function WeatherScreen() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      <BlurTargetView ref={blurTarget} style={StyleSheet.absoluteFill}>
-        <ImageBackground
-          source={require('../assets/bg.png')}
-          style={styles.imageContainer}
-          imageStyle={styles.image}
-        />
+      <BlurTargetView ref={blurTarget} style={styles.fullScreen}>
+        <LinearGradient colors={theme.sky} style={StyleSheet.absoluteFill} />
+        <LinearGradient colors={theme.overlay} style={StyleSheet.absoluteFill} />
+        <View style={[StyleSheet.absoluteFill, styles.mountainLayer]}>
+          <Image
+            source={require('../assets/bg.png')}
+            style={StyleSheet.absoluteFill}
+            resizeMode="cover"
+          />
+        </View>
       </BlurTargetView>
+
       <View style={styles.detailsContainer}>
         <ActivityIndicator animating={loading} color="white" size="large" />
 
         {!loading && (
           <View>
-            {error && (
-              <GlassCard tint="dark" blurTarget={blurTarget} style={styles.weatherCard}>
+            {error || !data ? (
+              <GlassCard tint="dark" intensity={90} blurTarget={blurTarget} style={styles.weatherCard}>
                 <Text style={[styles.smallText, styles.textStyle]}>
                   Could not load your city or weather. Please try again later...
                 </Text>
               </GlassCard>
-            )}
-            {!error && (
-              <GlassCard tint="dark" blurTarget={blurTarget} style={styles.weatherCard}>
+            ) : (
+              <GlassCard tint="dark" intensity={90} blurTarget={blurTarget} style={styles.weatherCard}>
                 <Text style={[styles.largeText, styles.textStyle]}>
-                  {icon} {location}
+                  {data.icon} {data.location}
                 </Text>
-                <Text style={[styles.smallText, styles.textStyle]}>
-                  {weather}
-                </Text>
-                <Text style={[styles.largeText, styles.textStyle]}>
-                  {`${Math.round(temperature)}°`}
-                </Text>
+                <Text style={[styles.smallText, styles.textStyle]}>{data.weather}</Text>
+                <Text style={[styles.largeText, styles.textStyle]}>{data.temperature}°</Text>
               </GlassCard>
             )}
-            <GlassCard tint="light" padding={0} blurTarget={blurTarget} style={styles.searchCard}>
+
+            <View style={styles.searchCard}>
               <SearchInput
                 placeholder="Search any city"
                 onSubmit={handleUpdateLocation}
+                blurTarget={blurTarget}
               />
-            </GlassCard>
-            {!error && (
+            </View>
+
+            {!error && data && (
               <Text style={[styles.smallText, styles.textStyle, styles.subtitle]}>
-                Live at {created} {location}
+                Live at {data.created} {data.location}
               </Text>
             )}
           </View>
@@ -152,28 +127,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#34495E',
-    justifyContent: 'start',
   },
-  imageContainer: {
-    flex: 1,
+  fullScreen: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: Dimensions.get('screen').width,
+    height: Dimensions.get('screen').height,
   },
-  image: {
-    flex: 1,
-    width: null,
-    height: null,
-    resizeMode: 'cover',
-    opacity: 0.5,
+  mountainLayer: {
+    opacity: 0.95,
+    mixBlendMode: 'luminosity',
   },
   detailsContainer: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'rgba(0,0,0,0.2)',
     paddingHorizontal: 20,
   },
   textStyle: {
     textAlign: 'center',
     fontFamily: Platform.OS === 'ios' ? 'AvenirNext-Regular' : 'Roboto',
     color: 'white',
+    textShadowColor: 'rgba(0,0,0,0.45)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 4,
   },
   largeText: {
     fontSize: 44,
@@ -183,7 +160,6 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     marginTop: 10,
-    textAlign: 'center',
   },
   weatherCard: {
     marginVertical: 12,
