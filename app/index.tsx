@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
-  Dimensions,
   Image,
   Platform,
   StyleSheet,
@@ -70,7 +69,7 @@ export default function WeatherScreen() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      <BlurTargetView ref={blurTarget} style={styles.fullScreen}>
+      <BlurTargetView ref={blurTarget} style={StyleSheet.absoluteFill}>
         <LinearGradient colors={theme.sky} style={StyleSheet.absoluteFill} />
         <LinearGradient colors={theme.overlay} style={StyleSheet.absoluteFill} />
         <View style={[StyleSheet.absoluteFill, styles.mountainLayer]}>
@@ -128,16 +127,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#34495E',
   },
-  fullScreen: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: Dimensions.get('screen').width,
-    height: Dimensions.get('screen').height,
-  },
   mountainLayer: {
     opacity: 0.95,
-    mixBlendMode: 'luminosity',
+    mixBlendMode: Platform.OS === 'ios' ? 'luminosity' : 'multiply',
   },
   detailsContainer: {
     flex: 1,
