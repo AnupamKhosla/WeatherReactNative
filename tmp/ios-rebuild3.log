@@ -1,0 +1,229 @@
+› Planning build
+› Executing react-native Pods/hermes-engine » [CP-User] [Hermes] Replace Hermes for the right configuration, if needed
+› Executing react-native Pods/ReactNativeDependencies » [CP-User] [RNDeps] Replace React Native Dependencies for the right configuration, if needed
+› Preparing Pods/EXConstants-ExpoConstants_privacy » ResourceBundle-ExpoConstants_privacy-EXConstants-Info.plist
+› Preparing Pods/React-cxxreact-React-cxxreact_privacy » ResourceBundle-React-cxxreact_privacy-React-cxxreact-Info.plist
+› Preparing Pods/React-timing-React-timing_privacy » ResourceBundle-React-timing_privacy-React-timing-Info.plist
+› Preparing Pods/ExpoFileSystem-ExpoFileSystem_privacy » ResourceBundle-ExpoFileSystem_privacy-ExpoFileSystem-Info.plist
+› Preparing Pods/React-Core-React-Core_privacy » ResourceBundle-React-Core_privacy-React-Core-Info.plist
+› Preparing expo-constants Pods/EXConstants-EXConstants » ResourceBundle-EXConstants-EXConstants-Info.plist
+› Preparing Pods/expo-dev-menu-EXDevMenu » ResourceBundle-EXDevMenu-expo-dev-menu-Info.plist
+› Preparing Pods/expo-dev-launcher-EXDevLauncher » ResourceBundle-EXDevLauncher-expo-dev-launcher-Info.plist
+› Executing expo-dev-menu-interface Pods/expo-dev-menu-interface » Copy generated compatibility header
+› Executing react-native Pods/hermes-engine » [CP] Copy XCFrameworks
+› Executing react-native Pods/ReactNativeDependencies » [CP] Copy XCFrameworks
+› Executing react-native Pods/React-Core-prebuilt » [CP-User] [RNCore] Replace React Native Core for the right configuration, if needed
+› Executing react-native Pods/React-Core-prebuilt » [CP] Copy XCFrameworks
+› Executing react-native Pods/React-RCTFBReactNativeSpec » [CP-User] [RN]Check FBReactNativeSpec
+› Executing expo-modules-jsi Pods/ExpoModulesJSI » [CP-User] Build ExpoModulesJSI xcframework
+› Executing Global Weather Pods/ReactCodegen » [CP-User] Generate Specs
+› Executing @expo/log-box Pods/ExpoLogBox » Copy generated compatibility header
+› Executing expo-modules-jsi Pods/ExpoModulesJSI » [CP] Copy XCFrameworks
+› Executing Global Weather Pods/ReactCodegen » [Expo] Remove duplicate codegen output
+› Compiling Global Weather Pods/ReactCodegen » EventEmitters.cpp
+› Compiling Global Weather Pods/ReactCodegen » RCTModuleProviders.mm
+› Compiling Global Weather Pods/ReactCodegen » rnscreens-generated.mm
+› Compiling Global Weather Pods/ReactCodegen » safeareacontext-generated.mm
+› Compiling Global Weather Pods/ReactCodegen » States.cpp
+› Compiling Global Weather Pods/ReactCodegen » States.cpp
+› Compiling Global Weather Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling Global Weather Pods/ReactCodegen » ShadowNodes.cpp
+› Compiling Global Weather Pods/ReactCodegen » RCTUnstableModulesRequiringMainQueueSetupProvider.mm
+› Compiling Global Weather Pods/ReactCodegen » RCTThirdPartyComponentsProvider.mm
+› Compiling Global Weather Pods/ReactCodegen » RCTModulesConformingToProtocolsProvider.mm
+› Compiling Global Weather Pods/ReactCodegen » Props.cpp
+› Compiling Global Weather Pods/ReactCodegen » Props.cpp
+› Compiling Global Weather Pods/ReactCodegen » EventEmitters.cpp
+› Compiling Global Weather Pods/ReactCodegen » ComponentDescriptors.cpp
+› Compiling Global Weather Pods/ReactCodegen » ComponentDescriptors.cpp
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaContext.mm
+› Compiling Global Weather Pods/ReactAppDependencyProvider » RCTAppDependencyProvider.mm
+› Compiling react-native-screens Pods/RNScreens » UIViewController+RNScreens.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsScreenViewController.mm
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewState.cpp
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewShadowNode.cpp
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaViewComponentView.mm
+› Compiling react-native-safe-area-context Pods/react-native-safe-area-context » RNCSafeAreaProviderComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsScreenEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsScreenComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsNavigationStateObserverRegistry.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsHostShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSTabsHostEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsHostComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsHostComponentView+RNSImageLoader.mm
+› Packaging Global Weather Pods/ReactCodegen » libReactCodegen.a
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryHelper.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryContentComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabsBottomAccessoryComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabBarController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSTabBarAppearanceCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenHeaderCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackScreenComponentEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackOperationCoordinator.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackOperation.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackNavigationController.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHostComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderSubviewShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemSpacerComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderItemComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderConfigShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderConfigShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderConfigEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSStackHeaderConfigComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitScreenComponentEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitHostComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSplitHostComponentEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSearchBar.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScrollViewMarkerComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderSubviewShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderSubview.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderConfigShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStackHeaderConfig.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenStack.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSScreenNavigationContainer.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenFooter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenContentWrapper.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreenContainer.mm
+› Compiling react-native-screens Pods/RNScreens » RNSScreen.mm
+› Compiling react-native-screens Pods/RNScreens » RNSSafeAreaViewState.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSSafeAreaViewShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSSafeAreaViewComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSModule.mm
+› Compiling react-native-screens Pods/RNScreens » RNSModalScreenShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSModalScreen.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFullWindowOverlayShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSFullWindowOverlay.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetHostShadowStateProxy.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetHostShadowNode.cpp
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetHostEventEmitter.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetHostComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSFormSheetContentWrapperComponentView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConvert.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-Tabs.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-Stack.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-SplitView.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-ScrollViewMarker.mm
+› Compiling react-native-screens Pods/RNScreens » RNSConversions-Fabric.mm
+› Packaging react-native-safe-area-context Pods/react-native-safe-area-context » libreact-native-safe-area-context.a
+› Packaging Global Weather Pods/ReactAppDependencyProvider » libReactAppDependencyProvider.a
+› Executing react-native-maps Pods/react-native-maps » [CP-User] react-native-maps patches
+› Executing expo-modules-core Pods/ExpoModulesCore » [CP-User] [Expo] Resolve ExpoModulesCore dSYM source maps
+› Executing expo-modules-core Pods/ExpoModulesCore » [CP-User] [Expo] Switch ExpoModulesCore XCFramework for build configuration
+› Compiling react-native-maps Pods/react-native-maps » PlaceHolderPolygonView.mm
+› Compiling react-native-maps Pods/react-native-maps » PlaceHolderGoogleMapView.mm
+› Executing expo-modules-core Pods/ExpoModulesCore » [CP] Copy XCFrameworks
+› Executing expo-modules-core Pods/ExpoModulesWorklets » [CP-User] [Expo] Resolve ExpoModulesWorklets dSYM source maps
+› Executing expo-location Pods/ExpoLocation » [CP-User] [Expo] Resolve ExpoLocation dSYM source maps
+› Executing expo-font Pods/ExpoFont » [CP-User] [Expo] Resolve ExpoFont dSYM source maps
+› Executing expo-symbols Pods/ExpoSymbols » Copy generated compatibility header
+› Executing expo-glass-effect Pods/ExpoGlassEffect » Copy generated compatibility header
+› Executing expo-file-system Pods/ExpoFileSystem » [CP-User] [Expo] Resolve ExpoFileSystem dSYM source maps
+› Executing expo-blur Pods/ExpoBlur » Copy generated compatibility header
+› Executing expo-constants Pods/EXConstants » [CP-User] Generate app.config for prebuilt Constants.manifest
+› Executing expo-splash-screen Pods/ExpoSplashScreen » Copy generated compatibility header
+› Executing expo-modules-core Pods/ExpoModulesWorklets » [CP-User] [Expo] Switch ExpoModulesWorklets XCFramework for build configuration
+› Executing expo-location Pods/ExpoLocation » [CP-User] [Expo] Switch ExpoLocation XCFramework for build configuration
+› Packaging react-native-screens Pods/RNScreens » libRNScreens.a
+› Executing expo-linking Pods/ExpoLinking » Copy generated compatibility header
+› Executing expo-linear-gradient Pods/ExpoLinearGradient » Copy generated compatibility header
+› Executing expo-keep-awake Pods/ExpoKeepAwake » Copy generated compatibility header
+› Executing react-native-screens Pods/RNScreens » Copy generated compatibility header
+› Executing expo-font Pods/ExpoFont » [CP-User] [Expo] Switch ExpoFont XCFramework for build configuration
+› Executing expo-file-system Pods/ExpoFileSystem » [CP-User] [Expo] Switch ExpoFileSystem XCFramework for build configuration
+› Executing expo-modules-core Pods/ExpoModulesWorklets » [CP] Copy XCFrameworks
+› Executing @expo/dom-webview Pods/ExpoDomWebView » Copy generated compatibility header
+› Executing expo-asset Pods/ExpoAsset » Copy generated compatibility header
+› Executing expo-location Pods/ExpoLocation » [CP] Copy XCFrameworks
+› Packaging react-native-maps Pods/react-native-maps » libreact-native-maps.a
+› Executing expo Pods/Expo » Copy generated compatibility header
+› Executing expo-updates-interface Pods/EXUpdatesInterface » Copy generated compatibility header
+› Executing expo-manifests Pods/EXManifests » Copy generated compatibility header
+› Executing expo-constants Pods/EXConstants » Copy generated compatibility header
+› Executing expo-font Pods/ExpoFont » [CP] Copy XCFrameworks
+› Executing expo-file-system Pods/ExpoFileSystem » [CP] Copy XCFrameworks
+› Executing @expo/ui Pods/ExpoUI » Copy generated compatibility header
+› Compiling expo-router Pods/ExpoRouter » ExpoRouter-dummy.m
+› Packaging expo-router Pods/ExpoRouter » libExpoRouter.a
+› Executing expo-router Pods/ExpoRouter » Copy generated compatibility header
+› Compiling edge-to-edge Pods/EdgeToEdge » EdgeToEdge-dummy.m
+› Packaging edge-to-edge Pods/EdgeToEdge » libEdgeToEdge.a
+› Executing edge-to-edge Pods/EdgeToEdge » Copy generated compatibility header
+› Compiling expo-dev-menu Pods/expo-dev-menu » expo-dev-menu-dummy.m
+› Compiling expo-dev-menu Pods/expo-dev-menu » RCTKeyCommands.m
+› Compiling expo-dev-menu Pods/expo-dev-menu » EXDevMenuAppInfo.m
+› Packaging expo-dev-menu Pods/expo-dev-menu » libexpo-dev-menu.a
+› Executing expo-dev-menu Pods/expo-dev-menu » Copy generated compatibility header
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » expo-dev-launcher-dummy.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherUpdatesHelper.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherRCTDevSettings.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherEarlySetup.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherManifestParser.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherRedBox.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncher.m
+› Compiling expo-dev-launcher Pods/expo-dev-launcher » EXDevLauncherController.m
+› Packaging expo-dev-launcher Pods/expo-dev-launcher » libexpo-dev-launcher.a
+› Executing expo-dev-launcher Pods/expo-dev-launcher » Copy generated compatibility header
+› Compiling Pods/Pods-GlobalWeather » Pods-GlobalWeather-dummy.m
+› Packaging Pods/Pods-GlobalWeather » libPods-GlobalWeather.a
+› Executing GlobalWeather » [CP] Check Pods Manifest.lock
+› Executing GlobalWeather » [Expo] Configure project
+› Linking   GlobalWeather » __preview.dylib
+› Copying   ./PrivacyInfo.xcprivacy ➜ ios/GlobalWeather/PrivacyInfo.xcprivacy
+› Preparing GlobalWeather » Info.plist
+› Compiling GlobalWeather » GlobalWeather_vers.c
+› Linking   GlobalWeather » GlobalWeather.debug.dylib
+
+⚠️  (ios/GlobalWeather.xcodeproj:)
+
+
+ignoring duplicate libraries: '-lc++'
+(warning truncated)
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoBlur-3IBTBQK9IORUG.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoGlassEffect-1ZS58ZVFAC08E.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoSymbols-3KQVSLBPZHFK5.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/WidgetKit-2B1O9V5ZXGWT9.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoUI-10080QMWCPIQI.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoModulesWorklets-NQ5MDHZC24ZU.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/EXDevMenuInterface-2HLNAYZK711NJ.pcm
+› Linking   GlobalWeather » GlobalWeather
+› Generating debug GlobalWeather » GlobalWeather.app.dSYM
+› Executing GlobalWeather » Bundle React Native code and images
+› Executing GlobalWeather » [CP] Copy Pods Resources
+› Executing GlobalWeather » [Expo Dev Launcher] Strip Local Network Keys for Release
+› Executing GlobalWeather » [CP] Embed Pods Frameworks
+› Signing   GlobalWeather » GlobalWeather.debug.dylib
+› Signing   GlobalWeather » __preview.dylib
+› Signing   GlobalWeather » GlobalWeather.app
+⚠️  Script has ambiguous dependencies causing it to run on every build.
+   To fix, go to: Xcode » GlobalWeather/GlobalWeather » Build Phases » '[Expo Dev Launcher] Strip Local Network Keys for Release'
+   Either: Uncheck "Based on dependency analysis", or select output files to trigger the script
+
+› Build Succeeded
+
+› 0 error(s), and 9 warning(s)
+
+Starting Metro Bundler
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Waiting on http://localhost:8081
+› Installing /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/GlobalWeather-eyxjohwdldxdvkfqqwgnppbryawr/Build/Products/Debug-iphonesimulator/GlobalWeather.app
+› Installing on iPhone 17
+› Opening on iPhone 17 (com.global.weather)
+› Opening exp+global-weather://expo-development-client/?url=http%3A%2F%2F192.168.1.67%3A8081 on iPhone 17
+
+› Logs for your project will appear below.
+iOS Bundled 572ms node_modules/expo-router/entry.js (1329 modules)

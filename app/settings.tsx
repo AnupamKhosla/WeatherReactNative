@@ -20,6 +20,11 @@ export default function SettingsScreen() {
             resizeMode="cover"
           />
         </View>
+        <LinearGradient
+          colors={['rgba(8,12,22,0)', 'rgba(8,12,22,1)']}
+          locations={[0.5, 0.92]}
+          style={StyleSheet.absoluteFill}
+        />
       </BlurTargetView>
 
       <View style={styles.content}>
@@ -35,7 +40,7 @@ export default function SettingsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#34495E',
+    backgroundColor: 'transparent',
   },
   mountainLayer: {
     opacity: 0.95,

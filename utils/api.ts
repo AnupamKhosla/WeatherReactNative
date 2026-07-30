@@ -54,23 +54,26 @@ export type WeatherResult = {
   hour: number;
 };
 
-export const getWeather2 = async (cityName: string): Promise<WeatherResult> => {
-  // 1) Geocoding: city name → lat/long.
+export type GeoPoint = { latitude: number; longitude: number; name: string };
+
+// Public geocoder: city name → coords + canonical name. The map tab uses this
+// to fly the camera on search; getWeather2 reuses it so there is one geocoding
+// path. Throws if the city can't be resolved (caller shows an error state).
+export const geocodeCity = async (cityName: string): Promise<GeoPoint> => {
   const geoURL = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
     cityName,
   )}&count=1&language=en&format=json`;
 
   const geoRes = await fetch(geoURL);
   const geoData: unknown = await geoRes.json();
+  const point = readFirstGeocodeResult(geoData);
+  if (!point) throw new Error('City not found');
+  return point;
+};
 
-  // Defensive navigation: `geoData?.results?.[0]` would throw at compile time on
-  // `unknown`, so we narrow with a small helper.
-  const firstResult = readFirstGeocodeResult(geoData);
-  if (!firstResult) {
-    throw new Error('City not found');
-  }
-
-  const { latitude, longitude, name } = firstResult;
+export const getWeather2 = async (cityName: string): Promise<WeatherResult> => {
+  // 1) Geocoding: city name → lat/long (shared with the map tab).
+  const { latitude, longitude, name } = await geocodeCity(cityName);
 
   // 2) Forecast for those coords. timezone=auto → times come back in the
   //    location's local time, which makes the day/night + "live at HH:MM"

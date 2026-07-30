@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
+  Dimensions,
   Image,
   Platform,
   StyleSheet,
@@ -69,7 +70,7 @@ export default function WeatherScreen() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      <BlurTargetView ref={blurTarget} style={StyleSheet.absoluteFill}>
+      <BlurTargetView ref={blurTarget} style={styles.fullScreen}>
         <LinearGradient colors={theme.sky} style={StyleSheet.absoluteFill} />
         <LinearGradient colors={theme.overlay} style={StyleSheet.absoluteFill} />
         <View style={[StyleSheet.absoluteFill, styles.mountainLayer]}>
@@ -79,11 +80,6 @@ export default function WeatherScreen() {
             resizeMode="cover"
           />
         </View>
-        <LinearGradient
-          colors={['rgba(8,12,22,0)', 'rgba(8,12,22,1)']}
-          locations={[0.5, 0.92]}
-          style={StyleSheet.absoluteFill}
-        />
       </BlurTargetView>
 
       <View style={styles.detailsContainer}>
@@ -130,11 +126,18 @@ export default function WeatherScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: '#34495E',
+  },
+  fullScreen: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: Dimensions.get('screen').width,
+    height: Dimensions.get('screen').height,
   },
   mountainLayer: {
     opacity: 0.95,
-    mixBlendMode: Platform.OS === 'ios' ? 'luminosity' : 'multiply',
+    mixBlendMode: 'luminosity',
   },
   detailsContainer: {
     flex: 1,

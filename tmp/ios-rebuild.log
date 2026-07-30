@@ -1,0 +1,103 @@
+› Planning build
+› Executing react-native Pods/hermes-engine » [CP-User] [Hermes] Replace Hermes for the right configuration, if needed
+› Executing react-native Pods/ReactNativeDependencies » [CP-User] [RNDeps] Replace React Native Dependencies for the right configuration, if needed
+› Executing react-native Pods/React-Core-prebuilt » [CP-User] [RNCore] Replace React Native Core for the right configuration, if needed
+› Preparing Pods/React-Core-React-Core_privacy » ResourceBundle-React-Core_privacy-React-Core-Info.plist
+› Preparing Pods/React-cxxreact-React-cxxreact_privacy » ResourceBundle-React-cxxreact_privacy-React-cxxreact-Info.plist
+› Preparing Pods/React-timing-React-timing_privacy » ResourceBundle-React-timing_privacy-React-timing-Info.plist
+› Executing react-native Pods/React-RCTFBReactNativeSpec » [CP-User] [RN]Check FBReactNativeSpec
+› Executing react-native-maps Pods/react-native-maps » [CP-User] react-native-maps patches
+› Compiling react-native-maps Pods/react-native-maps » PlaceHolderGoogleMapView.mm
+› Compiling react-native-maps Pods/react-native-maps » PlaceHolderPolygonView.mm
+› Packaging react-native-maps Pods/react-native-maps » libreact-native-maps.a
+› Executing expo-modules-jsi Pods/ExpoModulesJSI » [CP-User] Build ExpoModulesJSI xcframework
+› Executing expo-modules-core Pods/ExpoModulesCore » [CP-User] [Expo] Switch ExpoModulesCore XCFramework for build configuration
+› Executing expo-modules-core Pods/ExpoModulesCore » [CP] Copy XCFrameworks
+› Preparing Pods/ExpoFileSystem-ExpoFileSystem_privacy » ResourceBundle-ExpoFileSystem_privacy-ExpoFileSystem-Info.plist
+› Executing expo-modules-core Pods/ExpoModulesWorklets » [CP-User] [Expo] Switch ExpoModulesWorklets XCFramework for build configuration
+› Preparing Pods/EXConstants-ExpoConstants_privacy » ResourceBundle-ExpoConstants_privacy-EXConstants-Info.plist
+› Executing expo-location Pods/ExpoLocation » [CP-User] [Expo] Switch ExpoLocation XCFramework for build configuration
+› Executing expo-font Pods/ExpoFont » [CP-User] [Expo] Switch ExpoFont XCFramework for build configuration
+› Executing expo-file-system Pods/ExpoFileSystem » [CP-User] [Expo] Switch ExpoFileSystem XCFramework for build configuration
+› Preparing Pods/expo-dev-menu-EXDevMenu » ResourceBundle-EXDevMenu-expo-dev-menu-Info.plist
+› Preparing expo-constants Pods/EXConstants-EXConstants » ResourceBundle-EXConstants-EXConstants-Info.plist
+› Executing expo-constants Pods/EXConstants » [CP-User] Generate app.config for prebuilt Constants.manifest
+› Preparing Pods/expo-dev-launcher-EXDevLauncher » ResourceBundle-EXDevLauncher-expo-dev-launcher-Info.plist
+› Executing expo-modules-core Pods/ExpoModulesWorklets » [CP] Copy XCFrameworks
+› Executing expo-font Pods/ExpoFont » [CP] Copy XCFrameworks
+› Executing expo-location Pods/ExpoLocation » [CP] Copy XCFrameworks
+› Executing expo-file-system Pods/ExpoFileSystem » [CP] Copy XCFrameworks
+⚠️  Script has ambiguous dependencies causing it to run on every build.
+   To fix, go to: Xcode » GlobalWeather/GlobalWeather » Build Phases » '[Expo Dev Launcher] Strip Local Network Keys for Release'
+   Either: Uncheck "Based on dependency analysis", or select output files to trigger the script
+
+› Executing GlobalWeather » [Expo] Configure project
+› Linking   GlobalWeather » GlobalWeather.debug.dylib
+› Preparing GlobalWeather » Info.plist
+› Generating debug GlobalWeather » GlobalWeather.app.dSYM
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoBlur-3IBTBQK9IORUG.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoGlassEffect-1ZS58ZVFAC08E.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoSymbols-3KQVSLBPZHFK5.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/WidgetKit-2B1O9V5ZXGWT9.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoUI-10080QMWCPIQI.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/ExpoModulesWorklets-NQ5MDHZC24ZU.pcm
+⚠️  No such file or directory: /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1FY9SNLN5DPY0/EXDevMenuInterface-2HLNAYZK711NJ.pcm
+› Linking   GlobalWeather » GlobalWeather
+› Generating debug GlobalWeather » GlobalWeather.app.dSYM
+› Executing GlobalWeather » Bundle React Native code and images
+› Executing GlobalWeather » [CP] Copy Pods Resources
+› Executing GlobalWeather » [Expo Dev Launcher] Strip Local Network Keys for Release
+› Signing   GlobalWeather » GlobalWeather.debug.dylib
+› Signing   GlobalWeather » __preview.dylib
+› Signing   GlobalWeather » GlobalWeather.app
+› Build Succeeded
+
+› 0 error(s), and 8 warning(s)
+
+Starting Metro Bundler
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Waiting on http://localhost:8081
+› Installing /Users/anupamkhosla/Library/Developer/Xcode/DerivedData/GlobalWeather-eyxjohwdldxdvkfqqwgnppbryawr/Build/Products/Debug-iphonesimulator/GlobalWeather.app
+› Installing on iPhone 17
+› Opening on iPhone 17 (com.global.weather)
+› Opening exp+global-weather://expo-development-client/?url=http%3A%2F%2F192.168.1.67%3A8081 on iPhone 17
+› Opening the iOS simulator, this might take a moment.
+
+› Logs for your project will appear below.
+iOS Bundling failed 570ms node_modules/expo-router/entry.js (1119 modules)
+Unable to resolve "edge-to-edge" from "app/_layout.tsx"
+[0m [90m 1 |[39m [36mimport[39m { [33mThemeProvider[39m[33m,[39m [33mDarkTheme[39m } [36mfrom[39m [32m'expo-router'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m { [33mNativeTabs[39m } [36mfrom[39m [32m'expo-router/unstable-native-tabs'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { enableEdgeToEdge } [36mfrom[39m [32m'edge-to-edge'[39m[33m;[39m
+ [90m   |[39m                                   [31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m enableEdgeToEdge()[33m;[39m
+ [90m 6 |[39m[0m
+
+Import stack:
+
+ app/_layout.tsx
+ | import "edge-to-edge"
+
+ app (require.context)
+
+[React] Unable to resolve module edge-to-edge from
+/Users/anupamkhosla/Desktop/Projects/GLOBALWEATHER_ALL/WeatherReactNative/app/_layout.tsx:
+edge-to-edge could not be found within the project or in these directories:
+node_modules
+../../../../node_modules
+\^[[0m \^[[90m 1 |\^[[39m \^[[36mimport\^[[39m {
+\^[[33mThemeProvider\^[[39m\^[[33m,\^[[39m \^[[33mDarkTheme\^[[39m }
+\^[[36mfrom\^[[39m \^[[32m'expo-router'\^[[39m\^[[33m;\^[[39m
+\^[[90m 2 |\^[[39m \^[[36mimport\^[[39m { \^[[33mNativeTabs\^[[39m }
+\^[[36mfrom\^[[39m
+\^[[32m'expo-router/unstable-native-tabs'\^[[39m\^[[33m;\^[[39m
+\^[[31m\^[[1m>\^[[22m\^[[39m\^[[90m 3 |\^[[39m \^[[36mimport\^[[39m {
+enableEdgeToEdge } \^[[36mfrom\^[[39m
+\^[[32m'edge-to-edge'\^[[39m\^[[33m;\^[[39m
+\^[[90m   |\^[[39m
+\^[[31m\^[[1m^\^[[22m\^[[39m
+\^[[90m 4 |\^[[39m
+\^[[90m 5 |\^[[39m enableEdgeToEdge()\^[[33m;\^[[39m
+\^[[90m 6 |\^[[39m\^[[0m

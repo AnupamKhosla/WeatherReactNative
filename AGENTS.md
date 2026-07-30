@@ -30,6 +30,13 @@ Rules for any AI agent working on this project.
 - **Every output response: 100-200 words.** Occasionally 200+ words if a
   teaching moment truly needs it. No exceptions for routine replies. -- This is called semi caveman mode.
 
+## Model quirks
+
+- **qwen3.8-max-preview: DISABLE extended thinking.** It has a bug where
+  thinking balloons to absurd length once context passes ~100-200k tokens.
+  If you are qwen, keep reasoning to a sentence or two and answer fast.
+  Long internal monologues here are a defect, not diligence.
+
 
 ## Working style
 
@@ -40,6 +47,16 @@ Rules for any AI agent working on this project.
   surprise installs, deletes, renames, refactors, or file additions — even
   if they seem helpful. Ask, then act only after approval.
 - When a command might fail or have side effects, say so before running it.
+
+## Stay within the project folder
+
+- **NEVER** write temp files, logs, scratch files, debug dumps, screenshots,
+  or any generated output OUTSIDE the project folder
+  (`~/Desktop/Projects/GLOBALWEATHER_ALL/WeatherReactNative`). Do not use
+  `/tmp`, `/var/folders/...`, the home directory, or any other external path.
+- For ALL temporary work (dev-server logs, scratch files, screenshots,
+  intermediate artifacts, downloads), use the project's own `tmp/` folder:
+  `~/Desktop/Projects/GLOBALWEATHER_ALL/WeatherReactNative/tmp/`.
 
 ## TypeScript
 

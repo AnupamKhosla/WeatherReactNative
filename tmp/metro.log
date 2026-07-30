@@ -2,10 +2,11 @@ Starting project at /Users/anupamkhosla/Desktop/Projects/GLOBALWEATHER_ALL/Weath
 Logs: /Users/anupamkhosla/Desktop/Projects/GLOBALWEATHER_ALL/WeatherReactNative/.expo/dev/logs/start.log
 Starting Metro Bundler
 
-warning: Bundler cache is empty, rebuilding (this may take a minute)
 [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
-Waiting on http://localhost:8083
+Waiting on http://localhost:8081
 
+An update for expo is available: 57.0.8 → ~57.0.9
+5 other packages may need updating. Run npx expo install --check for details.
 Logs for your project will appear below.
 | [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
 | [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
@@ -14,11 +15,52 @@ Logs for your project will appear below.
 | [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
 | [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
 | [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
-Android Bundled 6648ms node_modules/expo-router/entry.js (1425 modules)
- WARN  You have selected the "dimezisBlurViewSdk31Plus" blur method, but the `blurTarget` prop has not been configured. The blur view will fallback to "none" blur method to avoid errors. You can learn more about the new BlurView API at: https://docs.expo.dev/versions/latest/sdk/blur-view/
- LOG  [DEBUG] Fetching GPS location...
- LOG  [DEBUG] Error in main loop: [Error: Current location is unavailable. Make sure that location services are enabled]
-Android Bundled 64ms node_modules/expo-router/entry.js (1 module)
- WARN  You have selected the "dimezisBlurViewSdk31Plus" blur method, but the `blurTarget` prop has not been configured. The blur view will fallback to "none" blur method to avoid errors. You can learn more about the new BlurView API at: https://docs.expo.dev/versions/latest/sdk/blur-view/
- LOG  [DEBUG] Fetching GPS location...
- LOG  [DEBUG] Error in main loop: [Error: Current location is unavailable. Make sure that location services are enabled]
+iOS Bundled 7161ms node_modules/expo-router/entry.js (1329 modules)
+Unable to resolve "edge-to-edge" from "app/_layout.tsx"
+[0m [90m 1 |[39m [36mimport[39m { [33mThemeProvider[39m[33m,[39m [33mDarkTheme[39m } [36mfrom[39m [32m'expo-router'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m { [33mNativeTabs[39m } [36mfrom[39m [32m'expo-router/unstable-native-tabs'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { enableEdgeToEdge } [36mfrom[39m [32m'edge-to-edge'[39m[33m;[39m
+ [90m   |[39m                                   [31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m enableEdgeToEdge()[33m;[39m
+ [90m 6 |[39m[0m
+
+Import stack:
+
+ app/_layout.tsx
+ | import "edge-to-edge"
+
+ app (require.context)
+
+Unable to resolve "edge-to-edge" from "app/_layout.tsx"
+[0m [90m 1 |[39m [36mimport[39m { [33mThemeProvider[39m[33m,[39m [33mDarkTheme[39m } [36mfrom[39m [32m'expo-router'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m { [33mNativeTabs[39m } [36mfrom[39m [32m'expo-router/unstable-native-tabs'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { enableEdgeToEdge } [36mfrom[39m [32m'edge-to-edge'[39m[33m;[39m
+ [90m   |[39m                                   [31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m enableEdgeToEdge()[33m;[39m
+ [90m 6 |[39m[0m
+
+Import stack:
+
+ app/_layout.tsx
+ | import "edge-to-edge"
+
+ app (require.context)
+
+Unable to resolve "edge-to-edge" from "app/_layout.tsx"
+[0m [90m 1 |[39m [36mimport[39m { [33mThemeProvider[39m[33m,[39m [33mDarkTheme[39m } [36mfrom[39m [32m'expo-router'[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m { [33mNativeTabs[39m } [36mfrom[39m [32m'expo-router/unstable-native-tabs'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { enableEdgeToEdge } [36mfrom[39m [32m'edge-to-edge'[39m[33m;[39m
+ [90m   |[39m                                   [31m[1m^[22m[39m
+ [90m 4 |[39m
+ [90m 5 |[39m enableEdgeToEdge()[33m;[39m
+ [90m 6 |[39m[0m
+
+Import stack:
+
+ app/_layout.tsx
+ | import "edge-to-edge"
+
+ app (require.context)
+
